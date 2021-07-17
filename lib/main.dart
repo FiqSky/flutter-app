@@ -46,6 +46,12 @@ class FirstScreen extends StatelessWidget {
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
           Text('Lorem ipsum dolor sit amet'),
+          OutlinedButton(
+            onPressed: (){
+
+            },
+            child: Text('Button'),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
