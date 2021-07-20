@@ -41,14 +41,60 @@ class FirstScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Image.asset(
-            'images/fiq.jpg',
-            width: 300,
-            height: 300,
+      body: ListView(
+        children: [
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              border: Border.all(color: Colors.black)
+            ),
+            child: Center(
+              child: Text(
+                '1',
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
           ),
-          Text('Fiqih Firdaus Maulana', style: TextStyle(fontFamily: 'Oswald', fontSize: 30,),)
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(color: Colors.black)
+            ),
+            child: Center(
+              child: Text(
+                '2',
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
+          ),
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(color: Colors.black)
+            ),
+            child: Center(
+              child: Text(
+                '3',
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
+          ),
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(color: Colors.black)
+            ),
+            child: Center(
+              child: Text(
+                '4',
+                style: TextStyle(fontSize: 50),
+              ),
+            ),
+          )
         ],
       )
     );
