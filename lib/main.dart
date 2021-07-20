@@ -21,9 +21,6 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
-
-  final List<int> numberList = <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,45 +41,35 @@ class FirstScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.orange,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.yellow,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.green,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.indigo,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.purple,
-            ),
-          )
-        ],
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Pindah Screen'),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return SecondScreen();
+            }));
+          },
+        ),
       )
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Screen'),
+      ),
+      body: Center(
+        child: OutlinedButton(
+          child: Text('Kembali'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
     );
   }
 }
