@@ -40,12 +40,15 @@ class FirstScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: Image.asset(
-          'images/fiq.jpg',
-          width: 300,
-          height: 300,
-        ),
+      body: Column(
+        children: <Widget>[
+          Image.asset(
+            'images/fiq.jpg',
+            width: 300,
+            height: 300,
+          ),
+          Text('Fiqih Firdaus Maulana', style: TextStyle(fontFamily: 'Oswald', fontSize: 30,),)
+        ],
       )
     );
   }

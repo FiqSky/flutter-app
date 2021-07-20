@@ -52,6 +52,13 @@ flutter:
   assets:
     - images/fiq.jpg
 
+
+
+  fonts:
+    - family: Oswald
+      fonts:
+        - asset: fonts/Oswald-Regular.ttf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
