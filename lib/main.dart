@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
+
+  final List<int> numberList = <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,60 +45,21 @@ class FirstScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: [
-          Container(
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              border: Border.all(color: Colors.black)
-            ),
-            child: Center(
-              child: Text(
-                '1',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-          ),
-          Container(
-            height: 250,
-            decoration: BoxDecoration(
+          children: numberList.map((number) {
+            return Container(
+              height: 250,
+              decoration: BoxDecoration(
                 color: Colors.grey,
-                border: Border.all(color: Colors.black)
-            ),
-            child: Center(
-              child: Text(
-                '2',
-                style: TextStyle(fontSize: 50),
+                border: Border.all(color: Colors.black),
               ),
-            ),
-          ),
-          Container(
-            height: 250,
-            decoration: BoxDecoration(
-                color: Colors.grey,
-                border: Border.all(color: Colors.black)
-            ),
-            child: Center(
-              child: Text(
-                '3',
-                style: TextStyle(fontSize: 50),
+              child: Center(
+                child: Text(
+                  '$number', // Ditampilkan sesuai item
+                  style: TextStyle(fontSize: 50),
+                ),
               ),
-            ),
-          ),
-          Container(
-            height: 250,
-            decoration: BoxDecoration(
-                color: Colors.grey,
-                border: Border.all(color: Colors.black)
-            ),
-            child: Center(
-              child: Text(
-                '4',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-          )
-        ],
+            );
+          }).toList()
       )
     );
   }
