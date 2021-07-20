@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
+
+  String message = 'Hello from First Screen!';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +48,8 @@ class FirstScreen extends StatelessWidget {
         child: ElevatedButton(
           child: Text('Pindah Screen'),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return SecondScreen();
-            }));
+            Navigator.push(context, MaterialPageRoute(builder: (context)
+              => SecondScreen(message)));
           },
         ),
       )
@@ -56,6 +58,10 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+
+  final String message;
+  SecondScreen(this.message);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,12 +69,18 @@ class SecondScreen extends StatelessWidget {
         title: Text('Second Screen'),
       ),
       body: Center(
-        child: OutlinedButton(
-          child: Text('Kembali'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(message),
+            OutlineButton(
+              child: Text('Kembali'),
+              onPressed: (){
+                Navigator.pop(context);
+              },
+            )
+          ],
+        )
       ),
     );
   }
