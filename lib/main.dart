@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FirstScreen(), // Panggil FirstScreen di sini
+      // home: FirstScreen(), // Panggil FirstScreen di sini
+      home: FirstScreen(),
     );
   }
 }
@@ -39,23 +40,37 @@ class FirstScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Text(
-            'Sebuah Judul',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-          ),
-          Text('Lorem ipsum dolor sit amet'),
-          OutlinedButton(
-            onPressed: (){
+      body: TestTextField());
+  }
+}
 
-            },
-            child: Text('Button'),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+class TestTextField extends StatefulWidget {
+  @override
+  _TestTextFieldState createState() => _TestTextFieldState();
+}
+
+class _TestTextFieldState extends State<TestTextField> {
+  // String _name = '';
+  // TextEditingController _controller = TextEditingController();
+  bool lightOn = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Switch(
+        value: lightOn,
+        onChanged: (bool value) {
+          setState(() {
+            lightOn = value;
+          });
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(lightOn ? 'Light On' : 'Light Off'),
+              duration: Duration(seconds: 1),
+            ),
+          );
+        },
       ),
     );
   }
