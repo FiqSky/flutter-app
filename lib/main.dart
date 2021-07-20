@@ -44,27 +44,45 @@ class FirstScreen extends StatelessWidget {
           )
         ],
       ),
-      body: ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              border: Border.all(color: Colors.black),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              color: Colors.red,
             ),
-            child: Center(
-              child: Text(
-                '${numberList[index]}',
-                style: TextStyle(fontSize: 50),
-              ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.orange,
             ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider();
-        },
-        itemCount: numberList.length,
-      ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.yellow,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.green,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.indigo,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.purple,
+            ),
+          )
+        ],
+      )
     );
   }
 }
